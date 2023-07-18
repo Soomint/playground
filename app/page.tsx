@@ -1,10 +1,10 @@
-import Layout from './layout'
+import React from 'react';
+import BlogList from './components/BlogList';
 
-export default function Home() {
-  return (
-    <>
-      <h1>안녕하세요!</h1>
-      <p>Next.js로 화면을 그려보는 예시입니다.</p>
-    </>
-  )
-}
+const HomePage = () => {
+    return (
+        <BlogList />
+    );
+};
+
+export default HomePage;

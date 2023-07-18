@@ -19,20 +19,26 @@ export default function RootLayout({
     <html lang="ko">
       <div className={styles.container}>
         <header className={styles.header}>
+          <h1>블로그 제목</h1>
           <nav>
             <ul className={styles.navMenu}>
               <li><a href="#">홈</a></li>
-              <li><a href="#">서비스</a></li>
+              <li><a href="#">카테고리</a></li>
+              <li><a href="#">태그</a></li>
               <li><a href="#">소개</a></li>
-              <li><a href="#">문의</a></li>
             </ul>
           </nav>
         </header>
-        <main className={styles.content}>
-          {children}
-        </main>
+        <div className={styles.content}>
+          <div className={styles.sidebar}>
+            {/* 사이드바 내용 추가 */}
+          </div>
+          <main className={styles.main}>
+            {children}
+          </main>
+        </div>
         <footer className={styles.footer}>
-          <p>© 2023 예시 회사. All rights reserved.</p>
+          <p>© 2023 예시 블로그. All rights reserved.</p>
         </footer>
       </div>
     </html>
