@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import styles from './layout.module.css'
+import Header from './components/Header'
 // import { Inter } from 'next/font/google'
 
 // const inter = Inter({ subsets: ['latin'] })
@@ -18,17 +19,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <div className={styles.container}>
-        <header className={styles.header}>
-          <h1>블로그 제목</h1>
-          <nav>
-            <ul className={styles.navMenu}>
-              <li><a href="#">홈</a></li>
-              <li><a href="#">카테고리</a></li>
-              <li><a href="#">태그</a></li>
-              <li><a href="#">소개</a></li>
-            </ul>
-          </nav>
-        </header>
+        <Header />
         <div className={styles.content}>
           <div className={styles.sidebar}>
             {/* 사이드바 내용 추가 */}

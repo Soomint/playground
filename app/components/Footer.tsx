@@ -1,3 +1,4 @@
+import '../globals.css'
 import styles from './Footer.module.css'
 
 const Footer = () => {
