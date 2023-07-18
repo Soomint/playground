@@ -1,3 +1,4 @@
+import '../globals.css'
 import Head from 'next/head';
 import styles from './Header.module.css'
 
