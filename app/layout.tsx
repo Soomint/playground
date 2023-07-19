@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import styles from './layout.module.css'
 import Header from './components/Header'
+import Footer from './components/Footer'
 // import { Inter } from 'next/font/google'
 
 // const inter = Inter({ subsets: ['latin'] })
@@ -28,9 +29,7 @@ export default function RootLayout({
             {children}
           </main>
         </div>
-        <footer className={styles.footer}>
-          <p>© 2023 예시 블로그. All rights reserved.</p>
-        </footer>
+        <Footer />
       </div>
     </html>
   )
