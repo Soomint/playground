@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import styles from './layout.module.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Sidebar from './components/Sidebar'
 // import { Inter } from 'next/font/google'
 
 // const inter = Inter({ subsets: ['latin'] })
@@ -23,7 +24,7 @@ export default function RootLayout({
         <Header />
         <div className={styles.content}>
           <div className={styles.sidebar}>
-            {/* 사이드바 내용 추가 */}
+            <Sidebar />
           </div>
           <main className={styles.main}>
             {children}

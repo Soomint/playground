@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { BLOG } from '../blogs/[id]/page'
+import styles from './BlogList.module.css';
 
 const fs = require('fs');
 const fm = require('front-matter');
@@ -25,28 +26,30 @@ const Home = async () => {
     return (
         <>
             <h1 style={{ marginBottom: '100px' }}>블로그 리스트</h1>
-            <table>
-                <tr style={{ padding: '5px' }}>
-                    <th>카테고리</th>
-                    <th>제목</th>
-                    <th>작성일자</th>
-                    <th>설명</th>
-                    <th>태그</th>
-                </tr>
-                {
-                    blogList.map((blog: BLOG) => (
-                        <Link href={`/blogs/${blog.id}`} key={blog.id}>
-                            <tr style={{ padding: '5px' }}>
-                                <td>{blog.categories.map((category, idx) => category.concat((idx + 1) === blog.categories.length ? '' : ', '))}</td>
-                                <td>{blog.title}</td>
-                                <td>{blog.date}</td>
-                                <td>{blog.description}</td>
-                                <td>{blog.tags.map((tag, idx) => '#'.concat(tag).concat((idx + 1) === blog.tags.length ? '' : ' '))}</td>
-                            </tr>
-                        </Link>
-                    ))
-                }
-            </table>
+            <div className={styles.blogList}>
+                <table>
+                    <tr style={{ padding: '5px' }}>
+                        <th>카테고리</th>
+                        <th>제목</th>
+                        <th>작성일자</th>
+                        <th>설명</th>
+                        <th>태그</th>
+                    </tr>
+                    {
+                        blogList.map((blog: BLOG) => (
+                            <Link href={`/blogs/${blog.id}`} key={blog.id}>
+                                <tr style={{ padding: '5px' }}>
+                                    <td>{blog.categories.map((category, idx) => category.concat((idx + 1) === blog.categories.length ? '' : ', '))}</td>
+                                    <td>{blog.title}</td>
+                                    <td>{blog.date}</td>
+                                    <td>{blog.description}</td>
+                                    <td>{blog.tags.map((tag, idx) => '#'.concat(tag).concat((idx + 1) === blog.tags.length ? '' : ' '))}</td>
+                                </tr>
+                            </Link>
+                        ))
+                    }
+                </table>
+            </div>
         </>
     )
 }
