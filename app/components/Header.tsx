@@ -1,6 +1,7 @@
 import '../globals.css'
 import Head from 'next/head';
 import styles from './Header.module.css'
+import Link from 'next/link';
 
 const Header = () => {
     return (
@@ -22,10 +23,10 @@ const Header = () => {
             <h1>블로그 제목</h1>
             <nav>
                 <ul className={styles.navMenu}>
-                    <li><a href="#">홈</a></li>
-                    <li><a href="#">카테고리</a></li>
-                    <li><a href="#">태그</a></li>
-                    <li><a href="#">소개</a></li>
+                    <li><Link href="#">홈</Link></li>
+                    <li><Link href="#">카테고리</Link></li>
+                    <li><Link href="#">태그</Link></li>
+                    <li><Link href="#">소개</Link></li>
                 </ul>
             </nav>
         </>
